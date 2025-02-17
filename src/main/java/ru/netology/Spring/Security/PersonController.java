@@ -25,7 +25,7 @@ public class PersonController {
     public List<Person> findByAge(@RequestParam int age) {
         return personRepository.findByPersonID_AgeLessThanOrderByPersonID_AgeAsc(age);
     }
-    @GetMapping("/-name-and-surname")
+    @GetMapping("/by-name-and-surname")
     public Optional<Person> findByNameAndSurname (@RequestParam String name, @RequestParam String surname){
         return personRepository.findByPersonID_NameAndPersonID_Surname(name, surname);
     }
