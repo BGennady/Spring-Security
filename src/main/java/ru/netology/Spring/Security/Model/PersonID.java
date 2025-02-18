@@ -1,4 +1,4 @@
-package ru.netology.Spring.Security;
+package ru.netology.Spring.Security.Model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;

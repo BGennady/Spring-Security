@@ -1,9 +1,11 @@
-package ru.netology.Spring.Security;
+package ru.netology.Spring.Security.Сontroller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import ru.netology.Spring.Security.Model.Person;
+import ru.netology.Spring.Security.Repository.PersonRepository;
 
 import java.util.List;
 import java.util.Optional;

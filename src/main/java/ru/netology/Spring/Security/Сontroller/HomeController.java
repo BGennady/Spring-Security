@@ -1,4 +1,4 @@
-package ru.netology.Spring.Security;
+package ru.netology.Spring.Security.Сontroller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

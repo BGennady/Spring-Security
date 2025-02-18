@@ -1,8 +1,9 @@
-package ru.netology.Spring.Security;
+package ru.netology.Spring.Security.Config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,6 +15,7 @@ import org.springframework.security.web.SecurityFilterChain;
 
 // класс содержит настройки безопасности
 @Configuration
+@EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true)
 public class SecurityConfig {
 
     // Bean для шифрования паролей
@@ -27,16 +29,22 @@ public class SecurityConfig {
         // пользователь с ролью "ADMIN"
         UserDetails admin = User.withUsername("admin")
                 .password(encoder().encode("qwerty"))
-                .roles("ADMIN")
+                .roles("READ", "WRITE", "DELETE")
                 .build();
 
         // пользователь с ролью "USER"
-        UserDetails user = User.withUsername("user")
+        UserDetails user1 = User.withUsername("Sergey")
                 .password(encoder().encode("pass"))
-                .roles("USER")
+                .roles("READ")
                 .build();
 
-        return new InMemoryUserDetailsManager(admin, user);
+        //
+        UserDetails user2 = User.withUsername("Nikita")
+                .password(encoder().encode("qaz"))
+                .authorities("WRITE", "DELETE")
+                .build();
+
+        return new InMemoryUserDetailsManager(admin, user1, user2);
     }
 
     @Bean
@@ -51,4 +59,6 @@ public class SecurityConfig {
                 .logout(Customizer.withDefaults()); //стандартная форма логаута
         return http.build();
     }
+
+
 }

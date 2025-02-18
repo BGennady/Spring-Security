@@ -1,9 +1,11 @@
-package ru.netology.Spring.Security;
+package ru.netology.Spring.Security.Repository;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+import ru.netology.Spring.Security.Model.Person;
+import ru.netology.Spring.Security.Model.PersonID;
 
 import java.util.List;
 import java.util.Optional;
