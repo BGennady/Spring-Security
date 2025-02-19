@@ -41,7 +41,7 @@ public class SecurityConfig {
         //
         UserDetails user2 = User.withUsername("Nikita")
                 .password(encoder().encode("qaz"))
-                .authorities("WRITE", "DELETE")
+                .authorities("DELETE", "WRITE")
                 .build();
 
         return new InMemoryUserDetailsManager(admin, user1, user2);
