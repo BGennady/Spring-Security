@@ -18,7 +18,7 @@ public class MethodController {
     }
 
     @GetMapping("/write")
-    @RolesAllowed("WRITE")
+    @RolesAllowed("ROLE_WRITE")
     public String write() {
         return "вам доступна функция Write";
     }
@@ -30,7 +30,7 @@ public class MethodController {
     }
 
     @GetMapping("/delete-or-write")
-    @PreAuthorize("hasAnyAuthority('DELETE','WRITE')")
+    @PreAuthorize("hasAnyRole('DELETE','WRITE')")
     public String deleteOrWrite() {
         return "вам доступна функция Delete или Write";
     }

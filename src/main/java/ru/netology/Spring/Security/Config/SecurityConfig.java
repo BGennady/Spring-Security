@@ -15,7 +15,7 @@ import org.springframework.security.web.SecurityFilterChain;
 
 // класс содержит настройки безопасности
 @Configuration
-@EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true)
+@EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true, jsr250Enabled = true)
 public class SecurityConfig {
 
     // Bean для шифрования паролей
@@ -41,7 +41,7 @@ public class SecurityConfig {
         //
         UserDetails user2 = User.withUsername("Nikita")
                 .password(encoder().encode("qaz"))
-                .authorities("DELETE", "WRITE")
+                .roles("DELETE", "WRITE")
                 .build();
 
         return new InMemoryUserDetailsManager(admin, user1, user2);

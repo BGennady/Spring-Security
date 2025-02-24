@@ -5,12 +5,9 @@ import lombok.*;
 
 import java.time.LocalDate;
 
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
+
 @Getter
 @Setter
-@ToString
 @Entity
 @Table(name = "ORDERS", schema = "hibernate")
 public class Order {

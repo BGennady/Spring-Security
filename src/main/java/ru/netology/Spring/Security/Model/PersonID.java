@@ -6,12 +6,8 @@ import lombok.*;
 
 import java.io.Serializable;
 
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
-@ToString
 
 // класс для указания первичного составного ключа
 @Embeddable

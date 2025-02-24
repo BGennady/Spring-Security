@@ -23,6 +23,7 @@ public class PersonController {
     public List<Person> findByCity(@RequestParam String city) {
         return personRepository.findPersonCityOfLiving(city);
     }
+
     @GetMapping("/by-age")
     public List<Person> findByAge(@RequestParam int age) {
         return personRepository.findByPersonID_AgeLessThanOrderByPersonID_AgeAsc(age);

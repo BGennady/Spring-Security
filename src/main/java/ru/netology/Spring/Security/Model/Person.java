@@ -5,12 +5,8 @@ import lombok.*;
 
 import java.util.List;
 
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
-@ToString
 @Entity
 @Table(name = "PERSONS", schema = "hibernate")
 
